@@ -4,14 +4,16 @@ const app = express();
 const PORT = process.env.PORT;
 
 // middleware to parse req.body
-app.use(express.json);
+app.use(express.json());
 
-app.get("/users", async (_req, res) => {
+app.get("/hikes", async (_req, res) => {
   try {
-    const data = await knex.select("*").from("hikes_list");
-    res.json(data);
+    const data = await knex("hikes_list");
+    // const data = await knex.select("*").from("hikes_list");
+    res.send(data);
   } catch {
     res.status(500).send("Error getting hikes");
+    console.log("does this work?");
   }
 });
 
