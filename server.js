@@ -6,6 +6,8 @@ const cors = require("cors");
 
 app.use(cors());
 
+app.use(express.static("data"));
+
 // middleware to parse req.body
 app.use(express.json());
 app.get("/", (req, res) => res.send("Hello World!"));

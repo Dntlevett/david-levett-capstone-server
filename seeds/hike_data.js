@@ -3,13 +3,16 @@
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> } 
  */
+// import tommhoi from "../data/images/tommhoi.jpeg";
 const fs = require("fs");
 const express = require("express");
+const app = express();
+
 const hikeData = [
   {
     id: 1,
 
-    // imagePath: "../crown-mountain.jpg",
+    imagePath: "/images/tommhoi.jpeg",
     name: "Grouse Grind Proper",
     city: "North Vancouver",
     province: "British Columbia",
@@ -18,7 +21,7 @@ const hikeData = [
   },
   {
     id: 2,
-    // imagePath: "",
+    imagePath: "",
     name: "Golden Ears Summit",
     city: "Maple Ridge",
     province: "British Columbia",
@@ -27,7 +30,7 @@ const hikeData = [
   },
   {
     id: 3,
-    // imagePath: "",
+    imagePath: "",
     name: "Wedgemount Lake",
     city: "Whistler",
     province: "British Columbia",
@@ -36,7 +39,7 @@ const hikeData = [
   },
   {
     id: 4,
-    // imagePath: "",
+    imagePath: "",
     name: "Elk Mountain",
     city: "Chilliwack",
     province: "British Columbia",
@@ -45,7 +48,7 @@ const hikeData = [
   },
   {
     id: 5,
-    // imagePath: "",
+    imagePath: "",
     name: "Joffre Lakes",
     city: "Pemberton",
     province: "British Columbia",
@@ -54,7 +57,7 @@ const hikeData = [
   },
   {
     id: 6,
-    // imagePath: "",
+    imagePath: "",
     name: "Saint Mark's Summit",
     city: "West Vancouver",
     province: "British Columbia",
@@ -63,7 +66,7 @@ const hikeData = [
   },
   {
     id: 7,
-    // imagePath: "",
+    imagePath: "",
     name: "Garibaldi Lake",
     city: "Whistler",
     province: "British Columbia",
@@ -72,7 +75,7 @@ const hikeData = [
   },
   {
     id: 8,
-    // imagePath: "",
+    imagePath: "",
     name: "The Lions Binkert Trail",
     city: "West Vancouver",
     province: "British Columbia",
@@ -81,7 +84,7 @@ const hikeData = [
   },
   {
     id: 9,
-    // imagePath: "",
+    imagePath: "",
     name: "Al's Habrich Ridge Trail",
     city: "Howe Sound",
     province: "British Columbia",
@@ -90,7 +93,7 @@ const hikeData = [
   },
   {
     id: 10,
-    // imagePath: "",
+    imagePath: "",
     name: "Elfin Lakes",
     city: "Garibaldi Provincial Park",
     province: "British Columbia",
@@ -99,7 +102,7 @@ const hikeData = [
   },
   {
     id: 11,
-    // imagePath: "",
+    imagePath: "",
     name: "Stawamus Chief",
     city: "Squamish",
     province: "British Columbia",
@@ -108,7 +111,7 @@ const hikeData = [
   },
   {
     id: 12,
-    // imagePath: "",
+    imagePath: "",
     name: "Burke North Summit",
     city: "Coquitlam",
     province: "British Columbia",
@@ -117,7 +120,7 @@ const hikeData = [
   },
   {
     id: 13,
-    // imagePath: "",
+    imagePath: "",
     name: "Coquitlam Lake View Trail",
     city: "Coquitlam",
     province: "British Columbia",
@@ -126,7 +129,7 @@ const hikeData = [
   },
   {
     id: 14,
-    // imagePath: "",
+    imagePath: "",
     name: "Crown Mountain",
     city: "North Vancouver",
     province: "British Columbia",
@@ -150,14 +153,14 @@ exports.seed = async function (knex) {
   //   { id: 2, colName: "rowValue2" },
   //   { id: 3, colName: "rowValue3" },
   // ]);
-  // await knex("hikes_list").insert({
-  //   id: hike.id,
-  //   imagePath: imageBase64, // Add this line
-  //   name: hike.name,
-  //   city: hike.city,
-  //   province: hike.province,
-  //   distance: hike.distance,
-  //   elevation: hike.elevation,
-  // });
+  //   await knex("hikes_list").insert({
+  //     id: hike.id,
+  //     imagePath: imageBase64, // Add this line
+  //     name: hike.name,
+  //     city: hike.city,
+  //     province: hike.province,
+  //     distance: hike.distance,
+  //     elevation: hike.elevation,
+  //   });
   // }
 };
