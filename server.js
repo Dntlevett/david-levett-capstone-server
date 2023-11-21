@@ -3,13 +3,15 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT;
 const cors = require("cors");
-
 app.use(cors());
+
+// app.use(express.json());
 
 app.use(express.static("data"));
 
 // middleware to parse req.body
 app.use(express.json());
+
 app.get("/", (req, res) => res.send("Hello World!"));
 app.get("/hikes", async (_req, res) => {
   try {
@@ -24,6 +26,30 @@ app.get("/hikes", async (_req, res) => {
 app.get("/hikes/:id", async (req, res) => {
   const data = await knex("hikes_list").where("id", req.params.id);
   res.json(data);
+});
+// post request to send user details to mySQL database
+app.post("/userpost", async (req, res) => {
+  console.log(req.body);
+  console.log(res.req.body);
+  // console.log(req.params.id);
+  // console.log(req.body);
+  const data = await knex("user_selection")
+    //.where({ id: req.params.id })
+    .insert(req.body);
+  res.json(data);
+
+  // const postUserSelection = async (req, res) => {
+  //   console.log(req.body);
+  //   // const newUser = req.body;
+  //   // const createdUser = await knex("user_selection").insert(req.body);
+  //   // const createdUserId = createdUser[0];
+  //   // const newCompany = await knex("user_selection").where({
+  //   //   id: createdUserId,
+  //   // });
+  // };
+  // postUserSelection();
+
+  //res.send("made it to post");
 });
 
 // server listen
