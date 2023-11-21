@@ -12,6 +12,7 @@ exports.up = function (knex) {
     table.string("province");
     table.string("distance");
     table.string("elevation");
+    table.string("difficulty");
   });
 };
 
