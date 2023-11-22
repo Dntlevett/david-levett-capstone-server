@@ -3,7 +3,9 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT;
 const cors = require("cors");
+const bodyParser = require("body-parser");
 app.use(cors());
+app.use(bodyParser.json());
 
 // app.use(express.json());
 
@@ -50,6 +52,20 @@ app.post("/userpost", async (req, res) => {
   // postUserSelection();
 
   //res.send("made it to post");
+});
+
+app.post("/buttonpost", async (req, res) => {
+  const button = req.body.button;
+  const query = await knex("user_selection");
+  //   db.query(query, { button }, (error, results) => {
+  //     if (error) {
+  //       console.error(error);
+  //       res.status(500).json({ status: 'error' });
+  //     } else {
+  //       res.status(200).json({ status: 'ok', results });
+  //     }
+  //   });
+  // });
 });
 
 // server listen
