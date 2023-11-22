@@ -29,6 +29,14 @@ app.get("/hikes/:id", async (req, res) => {
   const data = await knex("hikes_list").where("id", req.params.id);
   res.json(data);
 });
+//Get hikes by difficult
+
+app.get("/hikes/difficulty/:difficulty", async (req, res) => {
+  const data = await knex("hikes_list").where({
+    difficulty: req.params.difficulty,
+  });
+  res.json(data);
+});
 // post request to send user details to mySQL database
 app.post("/userpost", async (req, res) => {
   console.log(req.body);
