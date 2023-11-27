@@ -15,6 +15,7 @@ app.use(express.static("data"));
 app.use(express.json());
 
 app.get("/", (req, res) => res.send("Hello World!"));
+
 app.get("/hikes", async (_req, res) => {
   try {
     const data = await knex("hikes_list");

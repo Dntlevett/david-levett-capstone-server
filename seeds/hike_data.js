@@ -3,7 +3,7 @@
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> } 
  */
-// import tommhoi from "../data/images/tommhoi.jpeg";
+
 const fs = require("fs");
 const express = require("express");
 const app = express();
@@ -152,29 +152,6 @@ const hikeData = [
   },
 ];
 exports.seed = async function (knex) {
-  // Deletes ALL existing entries
   await knex("hikes_list").del();
-  // for (const hike of hikeData) {
-  //   // Read the image file into a buffer
-  //   const image = fs.readFileSync(hike.imagePath);
-  //   // Create an instance of TextEncoder
-  //   const encoder = new TextEncoder();
-  //   // Convert the buffer to a base64 string
-  //   const imageBase64 = encoder.encode(image.toString("base64"));
   await knex("hikes_list").insert(hikeData);
-
-  //   { id: 1, colName: "rowValue1" },
-  //   { id: 2, colName: "rowValue2" },
-  //   { id: 3, colName: "rowValue3" },
-  // ]);
-  //   await knex("hikes_list").insert({
-  //     id: hike.id,
-  //     imagePath: imageBase64, // Add this line
-  //     name: hike.name,
-  //     city: hike.city,
-  //     province: hike.province,
-  //     distance: hike.distance,
-  //     elevation: hike.elevation,
-  //   });
-  // }
 };
