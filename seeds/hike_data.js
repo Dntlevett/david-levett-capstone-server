@@ -52,7 +52,7 @@ const hikeData = [
   },
   {
     id: 5,
-    imagePath: "/images/joffre-amin.jpeg",
+    imagePath: "../../images/joffre-amin.jpeg",
     name: "Joffre Lakes",
     city: "Pemberton",
     province: "British Columbia",
