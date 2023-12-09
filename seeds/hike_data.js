@@ -11,7 +11,6 @@ const app = express();
 const hikeData = [
   {
     id: 1,
-
     imagePath: "/images/mount-fromme.jpeg",
     name: "Grouse Grind",
     city: "North Vancouver",
