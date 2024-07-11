@@ -2,6 +2,8 @@
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
+
+// set values in table
 exports.up = function (knex) {
   return knex.schema.createTable("hikes_list", function (table) {
     table.increments("id"); // pk, auto increment
